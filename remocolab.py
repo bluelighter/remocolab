@@ -125,22 +125,11 @@ def _setupSSHDMain(ngrok_region, check_gpu_available):
   if check_gpu_available and not _check_gpu_available():
     return (False, "")
 
-  print("---")
-  print("Copy&paste your tunnel authtoken from https://dashboard.ngrok.com/auth")
-  print("(You need to sign up for ngrok and login,)")
-  #Set your ngrok Authtoken.
-  ngrok_token = getpass.getpass()
+
+  ngrok_token = input(1dBNhQIGfI3vZGe7khqt4EU40GU_6QiFgzGTYJ2FWebT8eh9T)
 
   if not ngrok_region:
-    print("Select your ngrok region:")
-    print("us - United States (Ohio)")
-    print("eu - Europe (Frankfurt)")
-    print("ap - Asia/Pacific (Singapore)")
-    print("au - Australia (Sydney)")
-    print("sa - South America (Sao Paulo)")
-    print("jp - Japan (Tokyo)")
-    print("in - India (Mumbai)")
-    ngrok_region = region = input()
+    ngrok_region = region = input(us)
 
   return (True, _setupSSHDImpl(ngrok_token, ngrok_region))
 
